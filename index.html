@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>15th Monthsary Celebration</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+  }
+  .container {
+    text-align: center;
+  }
+  .gift-box {
+    width: 100px;
+    height: 100px;
+    background-color: #ffcc00;
+    border: 5px solid #d4af37;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    font-size: 50px;
+    line-height: 100px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin: 20px;
+  }
+  .gift-box.open {
+    transform: rotateY(180deg);
+  }
+  .message {
+    display: none;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333;
+  }
+  .envelope {
+    font-size: 50px;
+    cursor: pointer;
+    display: none;
+  }
+  .envelope.open {
+    display: block;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="gift-box" id="box1" onclick="openBox('box2')">🎁</div>
+  <div class="gift-box" id="box2" onclick="openBox('box3')">🎁</div>
+  <div class="gift-box" id="box3" onclick="openBox('envelope')">🎁</div>
+  <div class="envelope" id="envelope" onclick="revealMessage()">✉️</div>
+  <div class="message" id="message">
+    <p>Happy 15th Monthsary!</p>
+    <p>You are my everything and more. I love you!</p>
+  </div>
+</div>
+
+<script>
+function openBox(boxId) {
+  const currentBox = document.getElementById(boxId);
+  currentBox.classList.add('open');
+}
+
+function revealMessage() {
+  const message = document.getElementById("message");
+  message.style.display = "block";
+}
+</script>
+</body>
+</html>
